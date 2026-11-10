@@ -7,63 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.catalog-wrap{max-width:1050px;margin:auto;padding:35px 6% 85px}
-.back-link{display:inline-block;color:#c99aff;font-size:13px;margin-bottom:24px;text-decoration:none}
-.catalog-head{text-align:center;margin:0 auto 28px;max-width:650px}
-.catalog-head .eyebrow{color:#bd83ff;font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:10px}
-.catalog-head h1{font:700 clamp(30px,6vw,48px) 'Space Grotesk';margin:0 0 10px}
-.catalog-head p{color:#aaa3b2;font-size:13px;line-height:1.7}
-.variant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.variant-card{overflow:hidden;border:1px solid #ffffff20;border-radius:18px;background:#15121c}
-.variant-visual{height:230px;position:relative;overflow:hidden;background:#21152f}
-.variant-visual img{width:100%;height:100%;object-fit:cover;display:block}
-.variant-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0a0714aa,transparent 65%);pointer-events:none}
-.variant-label{position:absolute;z-index:1;left:16px;bottom:14px;padding:7px 12px;border:1px solid #c98cff;border-radius:8px;background:#100a1dcc;color:#fff;font:700 11px 'Space Grotesk';letter-spacing:1px}
-.variant-info{padding:21px}
-.variant-info h2{font:600 21px 'Space Grotesk';margin:0 0 7px}
-.variant-info p{font-size:12px;color:#9992a1;line-height:1.6;min-height:38px;margin:0 0 17px}
-.qty-label{display:block;color:#bfb7c9;font-size:12px;margin-bottom:8px}
-.qty-select{width:100%;padding:13px;border-radius:9px;border:1px solid #55456d;background:#1b1525;color:#fff;font-size:14px}
-.price-total{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0;color:#aaa2b2;font-size:12px}
-.price-total strong{display:block;color:#fff;font:700 22px 'Space Grotesk';margin-top:3px}
-.price-total .total{text-align:right}
-.variant-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}
-.unit-large{font:700 21px 'Space Grotesk';white-space:nowrap}
-.order-btn{border:0;cursor:pointer;white-space:nowrap}
-.helper{font-size:10px;color:#81798b;line-height:1.6;margin-top:20px;text-align:center}
-@media(max-width:700px){.catalog-wrap{padding:28px 5% 70px}.variant-grid{grid-template-columns:1fr;gap:17px}.variant-visual{height:215px}.variant-info{padding:18px}}
-</style>
-</head>
-<body style="visibility:hidden">
-<header class="header">
-  <a class="logo" href="index.html"><span class="logo-mark">T</span><span>TAPVANTA<span class="dot">.</span></span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-  <nav id="nav"><a href="index.html">Home</a><a href="index.html#shop">Shop</a><a href="index.html#contact">Contact</a></nav>
-  <a class="nav-cta" href="https://www.instagram.com/tap_vanta/" target="_blank" rel="noopener">Let's Talk ↗</a>
-</header>
-<main class="catalog-wrap">
-  <a class="back-link" href="index.html#shop">← Back to all 9 categories</a>
-  <section class="catalog-head"><div class="eyebrow">TAPVANTA NFC COLLECTION</div><h1 id="categoryTitle">Google Review Card</h1><p>Choose your card finish, select quantity and order directly through Instagram DM.</p></section>
-  <section class="variant-grid">
-    <article class="variant-card" data-type="Normal">
-      <div class="variant-visual"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=85" alt="Normal NFC card product lifestyle photo" loading="eager"><span class="variant-label">NORMAL</span></div>
-      <div class="variant-info"><h2>Normal NFC Card</h2><p>Clean standard design for everyday business use.</p><label class="qty-label" for="qtyNormal">Select quantity</label><select class="qty-select" id="qtyNormal"></select><div class="price-total"><div><span id="unitNormal">₹399 per card</span></div><div class="total">Total<strong id="totalNormal">₹399</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largeNormal">₹399 / card</span><button class="btn primary order-btn" data-order="Normal">Order on DM ↗</button></div></div>
-    </article>
-    <article class="variant-card" data-type="Premium">
-      <div class="variant-visual"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=85" alt="Premium product photography" loading="lazy"><span class="variant-label">PREMIUM</span></div>
-      <div class="variant-info"><h2>Premium NFC Card</h2><p>Elegant premium-look finish for your business.</p><label class="qty-label" for="qtyPremium">Select quantity</label><select class="qty-select" id="qtyPremium"></select><div class="price-total"><div><span id="unitPremium">₹599 per card</span></div><div class="total">Total<strong id="totalPremium">₹599</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largePremium">₹599 / card</span><button class="btn primary order-btn" data-order="Premium">Order on DM ↗</button></div></div>
-    </article>
-    <article class="variant-card" data-type="Customized">
-      <div class="variant-visual"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=85" alt="Custom stationery and branding inspiration" loading="lazy"><span class="variant-label">CUSTOMIZED</span></div>
-      <div class="variant-info"><h2>Customized NFC Card</h2><p>Your business name, logo and preferred design.</p><label class="qty-label" for="qtyCustomized">Select quantity</label><select class="qty-select" id="qtyCustomized"></select><div class="price-total"><div><span id="unitCustomized">₹699 per card</span></div><div class="total">Total<strong id="totalCustomized">₹699</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largeCustomized">₹699 / card</span><button class="btn primary order-btn" data-order="Customized">Order on DM ↗</button></div></div>
-    </article>
-  </section>
-  <p class="helper">Each card has its own quantity and order button. Instagram opens with the selected category, card type, quantity and price prefilled. Press Send in Instagram to submit.</p>
-</main>
+.catalog-wrap{max-width:1050px;margin:auto;padding:35px 6% 85px}.back-link{display:inline-block;color:#c99aff;font-size:13px;margin-bottom:24px;text-decoration:none}.catalog-head{text-align:center;margin:0 auto 28px;max-width:650px}.catalog-head .eyebrow{color:#bd83ff;font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:10px}.catalog-head h1{font:700 clamp(30px,6vw,48px) 'Space Grotesk';margin:0 0 10px}.catalog-head p{color:#aaa3b2;font-size:13px;line-height:1.7}.variant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.variant-card{overflow:hidden;border:1px solid #ffffff20;border-radius:18px;background:#15121c}.variant-visual{height:230px;position:relative;overflow:hidden;background:#21152f}.variant-visual img{width:100%;height:100%;object-fit:cover;display:block}.variant-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0a0714aa,transparent 65%);pointer-events:none}.variant-label{position:absolute;z-index:1;left:16px;bottom:14px;padding:7px 12px;border:1px solid #c98cff;border-radius:8px;background:#100a1dcc;color:#fff;font:700 11px 'Space Grotesk';letter-spacing:1px}.variant-info{padding:21px}.variant-info h2{font:600 21px 'Space Grotesk';margin:0 0 7px}.variant-info p{font-size:12px;color:#9992a1;line-height:1.6;min-height:38px;margin:0 0 17px}.qty-label{display:block;color:#bfb7c9;font-size:12px;margin-bottom:8px}.qty-select{width:100%;padding:13px;border-radius:9px;border:1px solid #55456d;background:#1b1525;color:#fff;font-size:14px}.price-total{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0;color:#aaa2b2;font-size:12px}.price-total strong{display:block;color:#fff;font:700 22px 'Space Grotesk';margin-top:3px}.price-total .total{text-align:right}.variant-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}.unit-large{font:700 21px 'Space Grotesk';white-space:nowrap}.order-btn{border:0;cursor:pointer;white-space:nowrap}.helper{font-size:10px;color:#81798b;line-height:1.6;margin-top:20px;text-align:center}@media(max-width:700px){.catalog-wrap{padding:28px 5% 70px}.variant-grid{grid-template-columns:1fr;gap:17px}.variant-visual{height:215px}.variant-info{padding:18px}}
+</style></head>
+<body>
+<header class="header"><a class="logo" href="index.html"><span class="logo-mark">T</span><span>TAPVANTA<span class="dot">.</span></span></a><button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button><nav id="nav"><a href="index.html">Home</a><a href="index.html#shop">Shop</a><a href="index.html#contact">Contact</a></nav><a class="nav-cta" href="https://www.instagram.com/tap_vanta/" target="_blank" rel="noopener">Let's Talk ↗</a></header>
+<main class="catalog-wrap"><a class="back-link" href="index.html#shop">← Back to all 9 categories</a><section class="catalog-head"><div class="eyebrow">TAPVANTA NFC COLLECTION</div><h1 id="categoryTitle">Google Review Card</h1><p>Choose your card finish, select quantity and order directly through Instagram DM.</p></section>
+<section class="variant-grid">
+<article class="variant-card" data-type="Normal"><div class="variant-visual"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=85" alt="Normal NFC card product lifestyle photo" loading="eager"><span class="variant-label">NORMAL</span></div><div class="variant-info"><h2>Normal NFC Card</h2><p>Clean standard design for everyday business use.</p><label class="qty-label" for="qtyNormal">Select quantity</label><select class="qty-select" id="qtyNormal"></select><div class="price-total"><div><span id="unitNormal">₹399 per card</span></div><div class="total">Total<strong id="totalNormal">₹399</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largeNormal">₹399 / card</span><button class="btn primary order-btn" data-order="Normal">Order on DM ↗</button></div></div></article>
+<article class="variant-card" data-type="Premium"><div class="variant-visual"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=85" alt="Premium product photography" loading="lazy"><span class="variant-label">PREMIUM</span></div><div class="variant-info"><h2>Premium NFC Card</h2><p>Elegant premium-look finish for your business.</p><label class="qty-label" for="qtyPremium">Select quantity</label><select class="qty-select" id="qtyPremium"></select><div class="price-total"><div><span id="unitPremium">₹599 per card</span></div><div class="total">Total<strong id="totalPremium">₹599</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largePremium">₹599 / card</span><button class="btn primary order-btn" data-order="Premium">Order on DM ↗</button></div></div></article>
+<article class="variant-card" data-type="Customized"><div class="variant-visual"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=85" alt="Custom stationery and branding inspiration" loading="lazy"><span class="variant-label">CUSTOMIZED</span></div><div class="variant-info"><h2>Customized NFC Card</h2><p>Your business name, logo and preferred design.</p><label class="qty-label" for="qtyCustomized">Select quantity</label><select class="qty-select" id="qtyCustomized"></select><div class="price-total"><div><span id="unitCustomized">₹699 per card</span></div><div class="total">Total<strong id="totalCustomized">₹699</strong></div></div><div class="variant-bottom"><span class="unit-large" id="largeCustomized">₹699 / card</span><button class="btn primary order-btn" data-order="Customized">Order on DM ↗</button></div></div></article>
+</section><p class="helper">Select quantity and order. Instagram opens with your order details copied. Paste the message in Instagram and press Send.</p></main>
 <footer><a class="logo" href="index.html"><span class="logo-mark">T</span><span>TAPVANTA<span class="dot">.</span></span></a><span>© <span id="year"></span> TAPVANTA. All rights reserved.</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="auth-guard.js"></script>
-<script src="auth-order.js"></script>
-<script src="nfc-cards.js"></script>
-</body>
-</html>
+<script src="nfc-cards.js"></script></body></html>
