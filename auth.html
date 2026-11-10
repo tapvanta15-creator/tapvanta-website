@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08070d"><title>Login / Sign Up | TAPVANTA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 0,#29133e,#08070d 55%);color:#fff;font-family:'DM Sans',sans-serif}.panel{width:min(100%,420px);padding:28px;border:1px solid #ffffff20;border-radius:20px;background:#12101bf2;box-shadow:0 25px 80px #0008}.logo{text-align:center;font:700 25px 'Space Grotesk';letter-spacing:2px;margin-bottom:8px}.logo span{color:#c46aff}.sub{text-align:center;color:#aaa3b4;font-size:13px;margin:0 0 25px}.tabs{display:flex;padding:4px;background:#08070d;border-radius:10px;margin-bottom:20px}.tabs button{flex:1;border:0;padding:11px;border-radius:8px;background:none;color:#aaa;cursor:pointer;font-weight:700}.tabs button.active{background:#7131cf;color:white}label{display:block;font-size:12px;color:#c9c1d2;margin:14px 0 7px}input{width:100%;padding:14px;border:1px solid #51435f;border-radius:9px;background:#0d0b13;color:#fff;font-size:15px;outline:none}input:focus{border-color:#b65aff}button.submit{width:100%;margin-top:22px;padding:15px;border:0;border-radius:9px;background:linear-gradient(110deg,#b34cf4,#7131cf);color:white;font-weight:800;font-size:14px;cursor:pointer}.hint{color:#8e8798;font-size:11px;line-height:1.6;margin-top:16px;text-align:center}.message{font-size:12px;line-height:1.5;margin-top:14px;text-align:center;color:#e5c7ff;min-height:18px}.hidden{display:none!important}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js" defer></script>
+</head>
+<body>
+<main class="panel">
+<div class="logo">TAPVANTA<span>.</span></div><p class="sub">Tap. Connect. Grow.</p>
+<div class="tabs"><button id="loginTab" class="active" type="button">LOGIN</button><button id="signupTab" type="button">SIGN UP</button></div>
+<form id="authForm">
+<div id="nameWrap" class="hidden"><label for="fullName">Full Name</label><input id="fullName" autocomplete="name" maxlength="70" placeholder="Enter your name"></div>
+<label for="mobile">Mobile Number</label><input id="mobile" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="10-digit mobile number" required>
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+<div id="confirmWrap" class="hidden"><label for="confirmPassword">Confirm Password</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="6" placeholder="Enter password again"></div>
+<button class="submit" id="submitBtn" type="submit">LOGIN</button>
+</form>
+<div class="message" id="message" role="status"></div>
+<p class="hint">No OTP required. Your mobile number is used for login and included with your order. Never share your password.</p>
+</main>
+</body></html>
