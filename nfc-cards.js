@@ -1,4 +1,4 @@
-//TAPVANTA NFC catalogue: bulk pricing, category photos and reliable copy-to-DM ordering.
+//TAPVANTA NFC catalogue: bulk pricing, category photos and copy-before-opening Instagram DM.
 const rates = {
   Normal: {1:399, 5:379, 10:349, 25:329, 50:299, 100:279},
   Premium: {1:599, 5:569, 10:549, 25:499, 50:449, 100:399},
@@ -50,8 +50,6 @@ document.title = category + " | TAPVANTA";
   updatePrice();
 });
 
-// Copy order details first; then open the Instagram conversation.
-// Instagram does not reliably support prefilled text in its DM deep link.
 async function copyOrderText(message) {
   if (navigator.clipboard && window.isSecureContext) {
     try {
@@ -63,9 +61,12 @@ async function copyOrderText(message) {
   field.value = message;
   field.setAttribute("readonly", "");
   field.style.position = "fixed";
+  field.style.top = "0";
   field.style.left = "-9999px";
   document.body.appendChild(field);
+  field.focus();
   field.select();
+  field.setSelectionRange(0, field.value.length);
   let copied = false;
   try { copied = document.execCommand("copy"); } catch (e) {}
   field.remove();
@@ -87,14 +88,19 @@ document.querySelectorAll("[data-order]").forEach(button => {
       "Please confirm availability, delivery charges and payment details."
     ].join("\n");
 
-    // Open synchronously during the tap so mobile browsers do not block the popup.
-    window.open("https://ig.me/m/tap_vanta", "_blank");
+    button.disabled = true;
+    const oldText = button.textContent;
+    button.textContent = "Copying order...";
     const copied = await copyOrderText(message);
-    if (copied) {
-      alert("Order details copied! Instagram DM khulne par message box mein Paste karke Send dabayein.");
-    } else {
-      alert("Instagram DM khul gaya. Order details copy nahi ho payi. Wapas website par aakar order details manually copy karein.");
+    button.disabled = false;
+    button.textContent = oldText;
+
+    if (!copied) {
+      alert("Order message copy nahi ho paya. Chrome mein website kholkar dobara try karein.");
+      return;
     }
+    alert("Order details copied! Ab Instagram DM khulega. Message box mein Paste karke Send dabayein.");
+    window.location.href = "https://ig.me/m/tap_vanta";
   });
 });
 
