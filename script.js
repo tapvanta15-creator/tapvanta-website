@@ -1,25 +1,12 @@
-//TAPVANTA: 9 photo-led NFC categories. Each opens the same two-page product selector.
-const categories = [
-  {name:"Google Review Card",desc:"Send customers directly to your Google review page.",photo:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=85"},
-  {name:"Instagram NFC Card",desc:"Let customers open your Instagram profile.",photo:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=900&q=85"},
-  {name:"WhatsApp NFC Card",desc:"Connect customers to your WhatsApp chat.",photo:"https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=85"},
-  {name:"Digital Menu Card",desc:"Open your restaurant or café digital menu.",photo:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=85"},
-  {name:"Digital Business Card",desc:"Share your contact details and business profile.",photo:"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=900&q=85"},
-  {name:"Website NFC Card",desc:"Take customers directly to your website.",photo:"https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&q=85"},
-  {name:"Google Maps Location Card",desc:"Share your business location on Google Maps.",photo:"https://images.unsplash.com/photo-1524666041070-9a87656c1f6a?w=900&q=85"},
-  {name:"Social Media NFC Card",desc:"Connect customers to your social media links.",photo:"https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=900&q=85"},
-  {name:"Custom Link Card",desc:"Open any link you choose with one tap.",photo:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900&q=85"}
-];
-const grid=document.getElementById("productGrid");
-categories.forEach(item=>{
- const card=document.createElement("article");
- card.className="product-card tapvanta-category-card";
- card.innerHTML=`<a class="tapvanta-category-link" href="nfc-cards.html?category=${encodeURIComponent(item.name)}">
- <div class="product-visual tapvanta-photo-visual"><img src="${item.photo}" alt="${item.name}" loading="lazy"><span class="photo-overlay">TAPVANTA NFC</span></div>
- <div class="product-info"><h3>${item.name}</h3><p>${item.desc}</p><div class="product-bottom"><span class="price">Explore cards</span><span class="order-btn">View options ↗</span></div></div></a>`;
- grid.appendChild(card);
-});
-const menuToggle=document.getElementById("menuToggle");
-if(menuToggle)menuToggle.addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
-document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
-const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
+const categories=[
+{name:"Google Review Card",desc:"Send customers to your Google review page.",photo:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=85"},
+{name:"Instagram NFC Card",desc:"Open your Instagram profile with one tap.",photo:"https://images.unsplash.com/photo-1611262588024-d12430b98920?w=900&q=85"},
+{name:"WhatsApp NFC Card",desc:"Connect customers to your WhatsApp chat.",photo:"https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=85"},
+{name:"Digital Menu Card",desc:"Open your restaurant or cafe menu.",photo:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=85"},
+{name:"Digital Business Card",desc:"Share your contact and business profile.",photo:"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=900&q=85"},
+{name:"Website NFC Card",desc:"Take customers directly to your website.",photo:"https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&q=85"},
+{name:"Google Maps Location Card",desc:"Share your business location instantly.",photo:"https://images.unsplash.com/photo-1524666041070-9a87656c1f6a?w=900&q=85"},
+{name:"Social Media NFC Card",desc:"Connect customers to all your social links.",photo:"https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=900&q=85"},
+{name:"Custom Link Card",desc:"Open any link you choose with one tap.",photo:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900&q=85"}];
+const grid=document.getElementById("productGrid");if(grid)categories.forEach(item=>{const card=document.createElement("article");card.className="product-card";card.innerHTML=`<a class="tapvanta-category-link" href="nfc-cards.html?category=${encodeURIComponent(item.name)}"><div class="product-visual"><img src="${item.photo}" alt="${item.name}" loading="lazy"><span class="photo-overlay">TAPVANTA NFC</span></div><div class="product-info"><h3>${item.name}</h3><p>${item.desc}</p><div class="product-bottom"><span class="price">Explore cards</span><span class="order-btn">View options ↗</span></div></div></a>`;grid.appendChild(card)});
+const toggle=document.getElementById("menuToggle");if(toggle)toggle.addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();document.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>{document.querySelectorAll(".mobile-nav a").forEach(x=>x.classList.remove("active"));a.classList.add("active")}));
