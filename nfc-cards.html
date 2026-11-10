@@ -34,7 +34,7 @@
 @media(max-width:700px){.catalog-wrap{padding:28px 5% 70px}.variant-grid{grid-template-columns:1fr;gap:17px}.variant-visual{height:215px}.variant-info{padding:18px}}
 </style>
 </head>
-<body>
+<body style="visibility:hidden">
 <header class="header">
   <a class="logo" href="index.html"><span class="logo-mark">T</span><span>TAPVANTA<span class="dot">.</span></span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
@@ -61,6 +61,9 @@
   <p class="helper">Each card has its own quantity and order button. Instagram opens with the selected category, card type, quantity and price prefilled. Press Send in Instagram to submit.</p>
 </main>
 <footer><a class="logo" href="index.html"><span class="logo-mark">T</span><span>TAPVANTA<span class="dot">.</span></span></a><span>© <span id="year"></span> TAPVANTA. All rights reserved.</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth-guard.js"></script>
+<script src="auth-order.js"></script>
 <script src="nfc-cards.js"></script>
 </body>
 </html>
